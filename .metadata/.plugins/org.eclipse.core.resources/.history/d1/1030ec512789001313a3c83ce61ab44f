@@ -1,0 +1,53 @@
+import javax.swing.JFrame;
+import java.util.Scanner;
+
+public class FaceTester {  
+	//creates a scanner for later input
+	private static Scanner in = new Scanner(System.in);
+/** Tests both Exciting and Boring classes. Gives user the option between an exciting face or a boring one.*/
+	public static void main(String[] args)
+{
+    JFrame frame = new JFrame();
+    JFrame frame1 = new JFrame();
+    		
+        Exciting excite = new Exciting();
+        Boring bore = new Boring(10,20);
+        Exciting wink = new Exciting(1);
+    	
+    	System.out.print("Please type 1 for a boring face or 2 for an exciting face: "); //Displays prompt
+    	int temp = in.nextInt();
+    	if (temp == 1){
+    		frame.setSize(300, 400);
+            frame.setTitle("FaceTester");
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setVisible(true);
+    		frame.add(bore);
+    		}
+    	else {
+    		frame.setSize(300, 400);
+            frame.setTitle("FaceTester");
+            frame.setVisible(true);
+    		frame.add(excite);
+    		
+    		System.out.print("Did you like the exciting face? 1 for yes or 2 for no: ");
+    		temp = in.nextInt();
+    		if (temp == 1){
+    			frame1.setSize(300, 400);
+                frame1.setTitle("FaceResponse");
+                frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame1.setVisible(true);
+        		frame1.add(wink);
+    		}
+    		else {
+    			frame1.setSize(300, 400);
+                frame1.setTitle("FaceResponse");
+                frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame1.setVisible(true);
+        		frame1.add(bore);
+    		}
+    	}
+    
+    }
+    	
+ }
+

@@ -1,0 +1,47 @@
+import javax.swing.JComponent;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.Line2D;
+import java.awt.geom.Arc2D;
+
+public class Exciting extends JComponent {
+	
+	//Instance Variables
+	private Ellipse2D.Double head;
+    private Ellipse2D.Double eye1;
+    private Ellipse2D.Double eye2;
+    private Arc2D.Double mouth;
+    
+	public Exciting() {
+		 //Create outline of face
+	      head = new Ellipse2D.Double(0,0,120,120);
+	      //Create left eye
+	      eye1 = new Ellipse2D.Double(30,30,10,10);
+	      //Create right eye
+	      eye2 = new Ellipse2D.Double(80,30,10,10);
+	      //Create mouth
+	      mouth = new Arc2D.Double(30,80,40,3,5,5,1);
+	}
+
+	
+	/**Constructs the face at coordinates (x,y)*/
+	public Exciting(int x, int y){
+			head = new Ellipse2D.Double(x,y,120,120);
+			eye1 = new Ellipse2D.Double(30 + x,30 + y,10,10);
+			eye2 = new Ellipse2D.Double(80 + x,30 + y,10,10);
+			//moves every element of the face over so that x,y is the top left
+	}
+	/**Paints the Exciting Face */
+	 public void paint(Graphics g)
+	    {
+	        // Recover the graphics context
+	        Graphics2D g2 = (Graphics2D) g;
+	        g2.draw(head);
+	        g2.draw(eye1);
+	        g2.draw(eye2);
+	        g2.draw(mouth);
+	    }
+
+
+}

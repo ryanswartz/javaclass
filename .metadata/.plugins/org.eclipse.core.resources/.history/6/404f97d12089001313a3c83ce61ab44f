@@ -1,0 +1,33 @@
+import javax.swing.JFrame;
+import java.util.Scanner;
+
+public class FaceTester {  
+	private static Scanner in;
+
+	public static void main(String[] args)
+{
+    JFrame frame = new JFrame();
+
+    frame.setSize(300, 400);
+    frame.setTitle("FaceTester");
+    
+    JFrame frame1 = new JFrame();
+
+    frame1.setSize(300, 400);
+    frame1.setTitle("FaceTester");
+    frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    
+    Exciting face = new Exciting();
+    Boring face2 = new Boring(100,200);
+    frame.add(face);
+    frame1.add(face2);
+    
+    frame.setVisible(true);
+    System.out.println("Do you like the exciting face? Y or N");
+   
+ 
+    
+    }
+    	
+ }
+
